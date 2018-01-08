@@ -2,17 +2,10 @@
 
 /**
  * @file
- * Airline name and logo pane template file.
+ * GNE reference pane template file.
  *
- * Theme hook suggestions are available in the format:
- * airline-logo-pane--CATEGORY-NAME.tpl.php
- * e.g. airline-logo-pane--air-transporation.tpl.php.
- *
- * @var $airline_name string
- *   The product airline name.
- *
- * @var $airline_logo array
- *   The product airline logo renderable array.
+ * @var $gne_reference string
+ *   The product GNE reference value.
  */
 ?>
 <?php if ($gne_reference): ?>

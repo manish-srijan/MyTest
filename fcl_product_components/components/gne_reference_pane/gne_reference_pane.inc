@@ -23,8 +23,5 @@ function fcl_product_components_preprocess_gne_reference_pane(&$vars) {
     ],
   ];
 
-  $vars['gne_reference'] = '';
-  if ($product->oneway_flag) {
-    $vars['gne_reference'] = $product->gne_reference;
-  }
+  $vars['gne_reference'] = !empty($product->oneway_flag) && $product->gne_reference ? $product->gne_reference : '';
 }

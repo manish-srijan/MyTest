@@ -361,12 +361,6 @@ function fcl_product_components_field_extra_fields() {
       'weight' => 5,
     );
 
-    $return[$entity_type][$bundle]['display']['product_sku_pane'] = array(
-      'label' => t('Product SKU'),
-      'description' => t('SKU of the product.'),
-      'weight' => 5,
-    );
-
     $return[$entity_type][$bundle]['display']['gne_reference_pane'] = array(
       'label' => t('GNE Reference'),
       'description' => t('GNE Reference of the product.'),
