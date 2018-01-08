@@ -1,0 +1,11 @@
+$include-supplier-image-pane-styles: true !default;
+
+// Default component class.
+$supplier-image-pane-selector: '.pane-fcl-procat-product-supplier-image-pane' !default;
+
+@if ($include-supplier-image-pane-styles) {
+  #{$supplier-image-pane-selector} {
+    clear: both;
+    text-align: center;
+  }
+}

@@ -1,0 +1,62 @@
+$include-expiry-date-styles: true !default;
+
+// Default component class.
+$expiry-date-selector: '.expiry-date-pane' !default;
+$expiry-date-margin-sml: 0 !default;
+$expiry-date-margin-med: 12px 0 0 !default;
+$expiry-date-icon-font-size: 1.25rem !default;
+$expiry-date-icon-color: #ff5252 !default;
+$expiry-date-label-font-size: rem-calc(14px) !default;
+$expiry-date-label-color: $color-text-dark-secondary !default;
+$expiry-date-color: $color-text-dark-primary !default;
+$expiry-date-font-size: $expiry-date-label-font-size !default;
+$expiry-date-font-weight: normal !default;
+
+@mixin expiry-date-small() {
+  #{$expiry-date-selector} {
+    margin: $expiry-date-margin-sml;
+    text-align: center;
+
+    &__icon {
+      display: inline-block;
+      vertical-align: middle;
+
+      i {
+        color: $expiry-date-icon-color;
+        font-size: $expiry-date-icon-font-size;
+      }
+    }
+
+    &__text-label {
+      color: $expiry-date-label-color;
+      font-size: $expiry-date-label-font-size;
+      line-height: 1rem;
+    }
+
+    &__product-expiry-date {
+      color: $expiry-date-color;
+      font-size: $expiry-date-font-size;
+      font-weight: $expiry-date-font-weight;
+      line-height: 1rem;
+    }
+  }
+}
+
+@mixin expiry-date-medium() {
+  #{$expiry-date-selector} {
+    margin: $expiry-date-margin-med;
+    text-align: inherit;
+  }
+}
+
+@mixin expiry-date {
+  @include expiry-date-small;
+
+  @include breakpoint(medium) {
+    @include expiry-date-medium;
+  }
+}
+
+@if ($include-expiry-date-styles) {
+  @include expiry-date;
+}

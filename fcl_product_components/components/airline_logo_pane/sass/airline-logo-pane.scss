@@ -1,0 +1,40 @@
+$include-airline-logo-styles: true !default;
+
+// Default component class.
+$airline-logo-pane-selector: '.airline-logo-pane' !default;
+$airline-logo-pane-airline-name-display: inline-block !default;
+$airline-logo-pane-title-font-size: rem-calc(14px) !default;
+$airline-logo-pane-title-font-weight: normal !default;
+$airline-logo-pane-title-display: $airline-logo-pane-airline-name-display !default;
+$airline-logo-pane-logo-wrapper-display: $airline-logo-pane-airline-name-display !default;
+$airline-logo-pane-logo-wrapper-margin: 0 0 0 15px !default;
+$airline-logo-pane-text-color: $color-text-dark-primary !default;
+
+@if ($include-airline-logo-styles) {
+  #{$airline-logo-pane-selector} {
+    &__title,
+    &__airline-name {
+      @include typography-body-2-small;
+      color: $airline-logo-pane-text-color;
+      font-weight: bold;
+    }
+
+    &__airline-name {
+      font-weight: normal;
+    }
+
+    &__title,
+    &__airline-name,
+    &__logo-wrapper {
+      display: $airline-logo-pane-logo-wrapper-display;
+    }
+
+    &__logo-wrapper {
+      margin: $airline-logo-pane-logo-wrapper-margin;
+    }
+
+    &__logo {
+      width: 56px;
+    }
+  }
+}

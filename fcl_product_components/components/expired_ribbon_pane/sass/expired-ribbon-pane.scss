@@ -1,0 +1,27 @@
+$include-expired-ribbon-pane-styles: true !default;
+$expired-ribbon-pane-parent-selector: '.pane-fcl-procat-product-expired-ribbon-pane' !default;
+$expired-ribbon-pane-selector: '.fcl-expired-ribbon-pane' !default;
+$expired-ribbon-pane-parent-background-colour: $color-primary !default;
+$expired-ribbon-font-color: $color-text-light !default;
+
+@if ($include-expired-ribbon-pane-styles) {
+  #{$expired-ribbon-pane-parent-selector} {
+    background-color: $expired-ribbon-pane-parent-background-colour;
+  }
+
+  #{$expired-ribbon-pane-selector} {
+    color: $expired-ribbon-font-color;
+    margin: auto;
+    max-width: 75rem;
+    padding: 25px 14px;
+
+    &__sku {
+      @include typography-body-1;
+      padding-left: 3px;
+    }
+
+    &__package {
+      @include typography-display-2;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+$include-wow-factor-styles: true !default;
+
+// Default component class.
+$wow-factor-pane-selector: '.wow-factor-pane' !default;
+$wow-factor-pane-label-wrapper-background: $color-alert-s20 !default;
+$wow-factor-pane-label-color: $white !default;
+$wow-factor-pane-label-font-size: rem-calc(10px) !default;
+$wow-factor-pane-label-line-height: rem-calc(21px) !default;
+$wow-factor-pane-label-font-weight: 500 !default;
+$wow-factor-pane-product-wow-factor-color: $color-text-dark-primary !default;
+
+@if ($include-wow-factor-styles) {
+  #{$wow-factor-pane-selector} {
+    line-height: 1rem;
+    margin-top: 15px;
+
+    &__text-label-wrapper {
+      background-color: $wow-factor-pane-label-wrapper-background;
+      float: left;
+      position: relative;
+      width: 71.44px;
+
+      &:before {
+        border-color: transparent $wow-factor-pane-label-color transparent transparent;
+        border-style: solid;
+        border-width: 11px 8px 12px 0;
+        content: '';
+        height: 0;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+        width: 0;
+      }
+    }
+
+    &__product-wow-factor {
+      @include typography-caption;
+      font-weight: 500;
+      margin-left: 10px;
+      color: $wow-factor-pane-product-wow-factor-color;
+    }
+
+    &__text-label {
+      color: $wow-factor-pane-label-color;
+      font-size: $wow-factor-pane-label-font-size;
+      font-weight: $wow-factor-pane-label-font-weight;
+      line-height: $wow-factor-pane-label-line-height;
+      margin-left: 15px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}

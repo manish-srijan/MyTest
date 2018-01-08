@@ -1,0 +1,36 @@
+$include-supplier-logo-styles: true !default;
+
+// Default component class.
+$supplier-logo-pane-selector: '.supplier-logo-pane' !default;
+$supplier-logo-pane-text-color: $color-text-dark-primary !default;
+
+@mixin supplier-logo-small() {
+  #{$supplier-logo-pane-selector} {
+    &__title,
+    &__default-text {
+      @include typography-body-2-small;
+      color: $supplier-logo-pane-text-color;
+    }
+
+    &__title {
+      font-weight: bold;
+    }
+
+    &__default-text {
+      font-weight: normal;
+    }
+
+    &__image {
+      max-width: 58px;
+      margin-left: 15px;
+    }
+  }
+}
+
+@mixin supplier-logo {
+  @include supplier-logo-small;
+}
+
+@if ($include-supplier-logo-styles) {
+  @include supplier-logo;
+}

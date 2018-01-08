@@ -1,0 +1,45 @@
+$itinerary-pane-selector: '.fcl-itinerary-pane' !default;
+$itinerary-list-selector: '.fcl-itinerary-list' !default;
+$itinerary-item-selector: '.fcl-itinerary-item' !default;
+$itinerary-list-style-type: none !default;
+$itinerary-map-button-selector: '.fcl-itinerary-map-button' !default;
+$itinerary-map-button-padding: 10px 20px !default;
+$itinerary-map-button-text-colour: $color-neutral-s10 !default;
+$itinerary-map-button-radius: 2px !default;
+$itinerary-map-button-box-shadow-color: rgba(0, 0, 0, .5) !default;
+
+#{$itinerary-pane-selector} {
+  #{$itinerary-list-selector} {
+    list-style-type: $itinerary-list-style-type;
+    margin: 0;
+    padding: 0;
+
+    &--tour {
+      padding: 0 0 1rem;
+    }
+  }
+
+  &--cruise {
+    .fcl-foundie-list {
+      list-style-type: $itinerary-list-style-type;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+#{$itinerary-map-button-selector} {
+  bottom: 30px;
+  float: right;
+  position: relative;
+
+  &__link {
+    @include typography-body-2-small;
+    border-radius: $itinerary-map-button-radius;
+    box-shadow: 0 2px 4px 0 $itinerary-map-button-box-shadow-color;
+    color: $itinerary-map-button-text-colour;
+    padding: $itinerary-map-button-padding;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

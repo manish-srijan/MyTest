@@ -1,0 +1,26 @@
+$include-product-sku-styles: true !default;
+
+// Default component class.
+$product-sku-pane-selector: '.pane-fcl-procat-product-product-sku-pane' !default;
+$product-sku-selector: '.fcl-product-sku-pane' !default;
+$product-sku-pane-font-size: .75rem !default;
+$product-sku-pane-padding: .5rem .875rem !default;
+$product-sku-pane-text-align: left !default;
+$product-sku-line-height: rem-calc(14px) !default;
+$product-sku-color: $color-text-dark-secondary !default;
+
+@if ($include-product-sku-styles) {
+  #{$product-sku-pane-selector} {
+    font-size: $product-sku-pane-font-size;
+    padding: $product-sku-pane-padding;
+    text-align: $product-sku-pane-text-align;
+
+    #{$product-sku-selector} {
+      &__deal-number {
+        @include typography-caption;
+        color: $product-sku-color;
+        line-height: $product-sku-line-height;
+      }
+    }
+  }
+}

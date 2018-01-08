@@ -1,0 +1,40 @@
+$conditions-selector: '.fcl-terms-and-conditions' !default;
+$conditions-button-background-colour: $color-neutral-s40 !default;
+$conditions-button-font-size: 1rem !default;
+$conditions-icon-colour: #919191 !default;
+$conditions-icon-border-width: 0 3px 3px 0 !default;
+$conditions-icon-padding: 3px !default;
+$conditions-title-color: $color-text-dark !default;
+$conditions-list-wrapper-padding: $conditions-button-font-size !default;
+
+#{$conditions-selector} {
+  &__wrapper {
+    padding: 0;
+  }
+
+  .accordion-title {
+    background-color: $conditions-button-background-colour;
+    color: $conditions-title-color;
+    font-size: $conditions-button-font-size;
+    padding: .75rem 1rem;
+
+    &:before {
+      border: solid $conditions-icon-colour;
+      border-width: $conditions-icon-border-width;
+      content: '';
+      display: inline-block;
+      height: 10px;
+      transform: rotate(45deg);
+      width: 10px;
+    }
+  }
+
+  .is-active {
+    .accordion-title {
+      &:before {
+        top: 60%;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}

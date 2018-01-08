@@ -1,0 +1,105 @@
+$include-product-component-styles: true !default;
+
+// Default component class.
+$product-component-selector: '.product-component' !default;
+$product-component-button-font-size-lrg: rem-calc(13px) !default;
+$product-page-sidebar-header-background-color: $color-neutral-s30 !default;
+$product-component-text-color: $color-text-dark-primary !default;
+$product-component-notice-color: $color-neutral-s40 !default;
+$product-component-divider-color: $color-divider-dark !default;
+
+@mixin product-component-small() {
+  #{$product-component-selector} {
+    &__banner-slider {
+      clear: both;
+
+      .fcl-carousel {
+        margin-bottom: 0;
+      }
+    }
+
+    &--sidebar {
+      &-header {
+        background-color: $product-page-sidebar-header-background-color;
+        padding: 1rem;
+      }
+    }
+
+    &--sidebar & {
+      &__title,
+      &__value {
+        @include typography-body-1-small;
+        color: $product-component-text-color;
+      }
+
+      &__title {
+        font-weight: bold;
+      }
+    }
+
+    &__product-button,
+    &__contact-us-button,
+    &__quote-button {
+      margin-bottom: 15px;
+
+      a {
+        width: 100%;
+      }
+    }
+
+    &__journey-map {
+      clear: both;
+    }
+
+    &__cruise-banner-slider {
+      clear: both;
+
+      img {
+        width: auto;
+      }
+    }
+
+    &__cruise-departure-info {
+      clear: both;
+      border-bottom: 1px solid $product-component-divider-color;
+    }
+
+    &__cruise-departure-info & {
+      &__value {
+        @include typography-body-1-small;
+        color: $product-component-text-color;
+      }
+    }
+
+    &__notice {
+      @include typography-body-1-small;
+      line-height: rem-calc(24px);
+      background-color: $product-component-notice-color;
+      padding: 1rem;
+    }
+  }
+}
+
+@mixin product-component-large() {
+  #{$product-component-selector} {
+    &__product-button,
+    &__contact-us-button,
+    &__quote-button {
+      a {
+        font-size: $product-component-button-font-size-lrg;
+      }
+    }
+  }
+}
+
+@mixin product-component {
+  @include product-component-small;
+
+  @include breakpoint(large) {
+    @include product-component-large;
+  }
+}
+
+@if ($include-product-component-styles) {
+  @include product-component;
+}

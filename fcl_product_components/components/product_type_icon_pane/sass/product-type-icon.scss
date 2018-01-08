@@ -1,0 +1,61 @@
+$include-product-type-icon-pane-styles: true !default;
+
+// Default component css properties.
+$product-type-icon-pane-selector: '.product-type-icon-pane' !default;
+$product-type-icon-pane-icon-color: $color-text-dark-disabled !default;
+$product-type-icon-pane-line-height: 1 !default;
+$product-type-icon-pane-padding: 30px 0 10px 0 !default;
+$product-type-icon-pane-title-padding: 0 5px 0 0 !default;
+$product-type-icon-pane-title-color: $color-text-dark !default;
+$product-type-icon-pane-title-font-size-sml: .875rem !default;
+$product-type-icon-pane-title-font-size-med: 1rem !default;
+$product-type-icon-pane-icon-font-size-sml: $product-type-icon-pane-title-font-size-sml !default;
+$product-type-icon-pane-icon-font-size-med: $product-type-icon-pane-title-font-size-med !default;
+$product-type-icon-pane-icon-vertical-alignment: text-bottom !default;
+$product-type-icon-pane-icon-line-height: rem-calc(15px) !default;
+
+@mixin product-type-icon-pane-small() {
+  #{$product-type-icon-pane-selector} {
+    line-height: $product-type-icon-pane-line-height;
+    padding: $product-type-icon-pane-padding;
+
+    &__title {
+      color: $product-type-icon-pane-title-color;
+      font-size: $product-type-icon-pane-title-font-size-sml;
+      padding: $product-type-icon-pane-title-padding;
+    }
+
+    &__icon-container {
+      i {
+        color: $product-type-icon-pane-icon-color;
+        font-size: $product-type-icon-pane-icon-font-size-sml;
+        line-height: $product-type-icon-pane-icon-line-height;
+        vertical-align: $product-type-icon-pane-icon-vertical-alignment;
+      }
+    }
+  }
+}
+
+@mixin product-type-icon-pane-medium {
+  #{$product-type-icon-pane-selector} {
+    &__title {
+      font-size: $product-type-icon-pane-title-font-size-med;
+    }
+
+    &__icon-container {
+      i {
+        font-size: $product-type-icon-pane-icon-font-size-med;
+      }
+    }
+  }
+}
+
+@mixin product-type-icon {
+  @if ($include-product-type-icon-pane-styles) {
+    @include product-type-icon-pane-small;
+
+    @include breakpoint(medium) {
+      @include product-type-icon-pane-medium;
+    }
+  }
+}

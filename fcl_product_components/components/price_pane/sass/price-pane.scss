@@ -1,0 +1,115 @@
+$include-price-pane-styles: true !default;
+
+$price-pane-selector: '.price-pane' !default;
+$price-pane-padding: 1rem !default;
+$price-pane-price-font-size: 2.25rem !default;
+$price-pane-price-font-weight: bold !default;
+$price-pane-from-price-color: $color-text-dark-primary !default;
+$price-pane-price-letter-spacing: .125rem !default;
+$price-pane-price-margin: .5rem 0 0 !default;
+$price-pane-dual-price-font-size: 1.3rem !default;
+$price-pane-dual-price-font-size-medium: .8rem !default;
+$price-pane-dual-price-letter-spacing: 0 !default;
+$price-pane-label-color: $color-text-dark-secondary !default;
+$price-pane-dual-price-icon: getIcon('alt-fare-logo');
+$price-pane-dual-price-icon-font-size: $small-text !default;
+$price-pane-dual-price-icon-color: #ff5252 !default;
+
+@mixin price-pane-small() {
+  #{$price-pane-selector} {
+    &__item {
+      padding: $price-pane-padding;
+    }
+
+    &__from-price-label,
+    &__conditions {
+      @include typography-body-1-small;
+    }
+
+    &__was-price-label {
+      @include typography-caption;
+    }
+
+    &__from-price-label,
+    &__was-price-label,
+    &__was-price,
+    &__conditions {
+      color: $price-pane-label-color;
+    }
+
+    &__travel-class,
+    &__direction {
+      line-height: 1rem;
+    }
+
+    &__from-price-container & {
+      &__currency-symbol {
+        @include typography-price-2;
+        line-height: 2rem;
+        vertical-align: top;
+      }
+
+      &__currency-symbol,
+      &__from-price,
+      &__terms-symbol {
+        color: $price-pane-from-price-color;
+      }
+    }
+
+    &__was-price-container {
+      margin-top: 15px;
+    }
+
+    &__was-price-container & {
+      &__currency-symbol {
+        @include typography-price-3;
+        line-height: 1rem;
+        color: $price-pane-label-color;
+        vertical-align: top;
+      }
+    }
+
+    &__from-price {
+      @include typography-price-1;
+    }
+
+    &__was-price {
+      @include typography-price-2;
+      font-weight: 500;
+    }
+
+    &__terms-symbol {
+      vertical-align: top;
+    }
+
+    &--dual-price {
+      &-icon {
+        &:before {
+          color: $price-pane-dual-price-icon-color;
+          content: '#{$price-pane-dual-price-icon}';
+          font-family: 'siteicons';
+          font-size: $price-pane-dual-price-icon-font-size;
+        }
+      }
+    }
+
+    &__currency-symbol,
+    &__from-price,
+    &__terms-symbol,
+    &__was-price {
+      display: table-cell;
+    }
+
+    &__campaign-availability {
+      @include typography-body-2-small();
+    }
+  }
+}
+
+@mixin price-pane {
+  @include price-pane-small;
+}
+
+@if ($include-price-pane-styles) {
+  @include price-pane;
+}

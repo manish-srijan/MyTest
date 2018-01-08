@@ -1,0 +1,29 @@
+$include-star-rating-styles: true !default;
+
+// Default component class.
+$star-rating-pane-selector: '.star-rating-pane' !default;
+$star-rating-pane-icon-color: $color-text-dark-secondary !default;
+$star-rating-pane-text-color: $color-text-dark-primary !default;
+
+@mixin star-rating-small() {
+  #{$star-rating-pane-selector} {
+    &__title {
+      @include typography-body-2-small;
+      color: $star-rating-pane-text-color;
+      font-weight: bold;
+    }
+
+    &--star-icon {
+      vertical-align: middle;
+      color: $star-rating-pane-icon-color;
+    }
+  }
+}
+
+@mixin star-rating {
+  @include star-rating-small;
+}
+
+@if ($include-star-rating-styles) {
+  @include star-rating;
+}

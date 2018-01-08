@@ -1,0 +1,15 @@
+$travel-dates-pane-selector: '.pane-fcl-procat-product-travel-dates-pane';
+$travel-dates-pane-item-list-selector: '.fcl-item-list';
+$travel-dates-pane-foundie-list-selector: '.fcl-foundie-list';
+$travel-dates-pane-foundie-list-item-selector: '.fcl-foundie-list-item';
+
+#{$travel-dates-pane-selector} {
+  #{$travel-dates-pane-item-list-selector} {
+    #{$travel-dates-pane-foundie-list-selector},
+    #{$travel-dates-pane-foundie-list-item-selector} {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

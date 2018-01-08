@@ -1,0 +1,10 @@
+name = FCL Product Components
+description = Themeable components for products.
+package = FCL Product
+core = 7.x
+version = 7.x-1.3
+
+dependencies[] = fcl_procat_product
+dependencies[] = fcl_utilities
+dependencies[] = foundie
+dependencies[] = fcl_icon

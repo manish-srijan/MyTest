@@ -1,0 +1,543 @@
+<?php
+
+/**
+ * @file
+ * Main function for product components.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function fcl_product_components_theme($existing, $type, $theme, $path) {
+  $return = array();
+  $components_path = $path . '/components/';
+
+  $return['travel_dates_pane'] = array(
+    'template' => 'travel-dates-pane',
+    'path' => $components_path . 'travel_dates_pane',
+    'file' => 'travel_dates_pane.inc',
+    'pattern' => 'travel_dates_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['itinerary_pane'] = array(
+    'template' => 'itinerary-pane',
+    'path' => $components_path . 'itinerary_pane',
+    'file' => 'itinerary_pane.inc',
+    'pattern' => 'itinerary_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['terms_and_conditions'] = array(
+    'template' => 'terms-and-conditions',
+    'path' => $components_path . 'terms_and_conditions',
+    'file' => 'terms_and_conditions.inc',
+    'pattern' => 'terms_and_conditions__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['inclusions_pane'] = array(
+    'template' => 'inclusions-pane',
+    'path' => $components_path . 'inclusions_pane',
+    'file' => 'inclusions_pane.inc',
+    'pattern' => 'inclusions_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['fpc_price_pane'] = array(
+    'template' => 'fpc-price-pane',
+    'path' => $components_path . 'price_pane',
+    'file' => 'price_pane.inc',
+    'pattern' => 'fpc_price_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => '',
+      'title_tag' => '',
+    ),
+  );
+
+  $return['product_component'] = array(
+    'template' => 'product-component',
+    'path' => $components_path . 'properties',
+    'file' => 'product-component.inc',
+    'pattern' => 'product_component__',
+    'variables' => array(
+      'product' => (object) [],
+      'property' => '',
+    ),
+  );
+
+  $return['product_button'] = array(
+    'render element' => 'product_button',
+    'file' => 'product_button.inc',
+    'path' => $components_path . 'product_button',
+  );
+
+  $return['supplier_image_pane'] = array(
+    'template' => 'supplier-image-pane',
+    'path' => $components_path . 'supplier_image_pane',
+    'file' => 'supplier_image_pane.inc',
+    'pattern' => 'supplier_image_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['supplier_logo_pane'] = array(
+    'template' => 'supplier-logo-pane',
+    'path' => $components_path . 'supplier_logo_pane',
+    'file' => 'supplier_logo_pane.inc',
+    'pattern' => 'supplier_logo_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['expiry_date_pane'] = array(
+    'template' => 'expiry-date-pane',
+    'path' => $components_path . 'expiry_date_pane',
+    'file' => 'expiry_date_pane.inc',
+    'pattern' => 'expiry_date_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['star_rating_pane'] = array(
+    'template' => 'star-rating-pane',
+    'path' => $components_path . 'star_rating_pane',
+    'file' => 'star_rating_pane.inc',
+    'pattern' => 'star_rating_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['expired_ribbon_pane'] = array(
+    'template' => 'expired-ribbon-pane',
+    'path' => $components_path . 'expired_ribbon_pane',
+    'file' => 'expired_ribbon_pane.inc',
+    'pattern' => 'expired_ribbon_pane__',
+    'variables' => array(
+      'product' => (object) [],
+    ),
+  );
+
+  $return['wow_factor_pane'] = array(
+    'template' => 'wow-factor-pane',
+    'path' => $components_path . 'wow_factor_pane',
+    'file' => 'wow_factor_pane.inc',
+    'pattern' => 'wow_factor_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['product_type_icon_pane'] = array(
+    'template' => 'product-type-icon-pane',
+    'path' => $components_path . 'product_type_icon_pane',
+    'file' => 'product_type_icon_pane.inc',
+    'pattern' => 'product_type_icon_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  $return['airline_logo_pane'] = array(
+    'template' => 'airline-logo-pane',
+    'path' => $components_path . 'airline_logo_pane',
+    'file' => 'airline_logo_pane.inc',
+    'pattern' => 'airline_logo_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+      'airline_logo_size' => 'logo_210x80',
+      'airline_multi_text' => t('Multiple Airlines'),
+    ),
+  );
+
+  $return['product_sku_pane'] = array(
+    'template' => 'product-sku-pane',
+    'path' => $components_path . 'product_sku_pane',
+    'file' => 'product_sku_pane.inc',
+    'pattern' => 'product_sku_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
+  return $return;
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function fcl_product_components_ctools_plugin_directory($owner, $plugin_type) {
+  switch ("$owner:$plugin_type") {
+    case 'panels:styles':
+    case 'panels:content_types':
+    case 'ctools:content_types':
+      return "plugins/$plugin_type";
+  }
+
+  return NULL;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function fcl_product_components_entity_info_alter(&$entity_info) {
+  $entity_info['fcl_procat_product']['extra fields controller class'] = 'EntityDefaultExtraFieldsController';
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function fcl_product_components_entity_property_info_alter(&$info) {
+  $entity_type = 'fcl_procat_product';
+  foreach ($info[$entity_type]['properties'] as $property => &$prop_info) {
+    // We unset this as EntityDefaultExtraFieldsController handles this for us.
+    if (isset($prop_info['extra field'])) {
+      unset($prop_info['extra field']);
+    }
+  }
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ *
+ * Add extra fields here.
+ */
+function fcl_product_components_field_extra_fields() {
+  $return = array();
+  $entity_type = 'fcl_procat_product';
+  $entity_info = entity_get_info($entity_type);
+
+  foreach (array_keys($entity_info['bundles']) as $bundle) {
+    if (module_exists('fcl_airline')) {
+      $return[$entity_type][$bundle]['display']['airline_name_full'] = array(
+        'label' => t('Airline Name'),
+        'description' => t('Full airline name from the airline service'),
+        'weight' => 5,
+      );
+
+      $return[$entity_type][$bundle]['display']['airline_logo_small'] = array(
+        'label' => t('Airline Logo: small'),
+        'description' => t('Small airline logo from the airline service'),
+        'weight' => 5,
+      );
+
+      $return[$entity_type][$bundle]['display']['airline_logo_large'] = array(
+        'label' => t('Airline Logo: large'),
+        'description' => t('large airline logo from the airline service'),
+        'weight' => 5,
+      );
+
+      $return[$entity_type][$bundle]['display']['airline_logo_xlarge'] = array(
+        'label' => t('Airline Logo: x-large'),
+        'description' => t('X-large airline logo from the airline service'),
+        'weight' => 5,
+      );
+    }
+
+    $return[$entity_type][$bundle]['display']['price_pane'] = array(
+      'label' => t('Price pane'),
+      'description' => t('The main price display'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['travel_dates_pane'] = array(
+      'label' => t('Travel Dates Pane'),
+      'description' => t('The product travel dates display'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['itinerary_pane'] = array(
+      'label' => t('Itinerary Pane'),
+      'description' => t('The formatted itinerary or description of the product'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['inclusions_pane'] = array(
+      'label' => t('Inclusions Pane'),
+      'description' => t('The formatted product inclusions'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['supplier_image_pane'] = array(
+      'label' => t('Supplier Image Pane'),
+      'description' => t('The supplier image of product'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['supplier_logo_pane'] = array(
+      'label' => t('Supplier Logo Pane'),
+      'description' => t('The supplier logo of product'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['expiry_date_pane'] = array(
+      'label' => t('Product commerce expiry date pane'),
+      'description' => t('The formatted Product commerce expiry date'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['star_rating_pane'] = array(
+      'label' => t('Star Rating Pane'),
+      'description' => t('The product star rating display'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['expired_ribbon_pane'] = array(
+      'label' => t('Expired Ribbon Pane'),
+      'description' => t('The expired product ribbon display'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['wow_factor_pane'] = array(
+      'label' => t('Wow factor pane'),
+      'description' => t('Wow factor of the product'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['product_type_icon_pane'] = array(
+      'label' => t('Product type icon'),
+      'description' => t('Display the product type icon with category name'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['airline_logo_pane'] = array(
+      'label' => t('Airline name & logo'),
+      'description' => t('Display the airline name with airline logo'),
+      'weight' => 5,
+    );
+
+    $return[$entity_type][$bundle]['display']['product_sku_pane'] = array(
+      'label' => t('Product SKU'),
+      'description' => t('SKU of the product.'),
+      'weight' => 5,
+    );
+  }
+
+  return $return;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ *
+ * @var $entity FclProduct
+ *   the product entity.
+ * @var $view_mode
+ *   the current view mode for the entity.
+ * @var $langcode
+ *   the language to use.
+ */
+function fcl_product_components_fcl_procat_product_view($entity, $view_mode, $langcode) {
+  // For some reason buildContent isn't running naturally, so...
+  if (empty($entity->content['#view_mode'])) {
+    // We call the light version, as we don't want the FCL Procat Product way
+    // of theming properties.
+    if (!isset($view_mode)) {
+      $view_mode = 'page';
+    }
+    $entity->content = array_merge($entity->content, $entity->lightBuildContent($view_mode, $langcode));
+  }
+  // Load conditions manually.
+  $entity->conditions = fcl_procat_product_get_conditions_field(array(), $entity->conditions);
+
+  // Load supplier conditions manually.
+  $entity->supplier_condition = fcl_procat_product_get_conditions_field(array(), $entity->supplier_condition);
+
+  // We don't want to show supplier conditions if contained within '<p>' tags.
+  if (strpos(trim($entity->supplier_condition), '<p>') === 0) {
+    $entity->supplier_condition = '';
+  }
+
+  // Render our extra fields, except for airline related ones, which we do in
+  // a later hook below.
+  $entity->content['price_pane'] = array(
+    '#theme' => 'fpc_price_pane',
+    '#product' => $entity,
+  );
+  $entity->content['travel_dates_pane'] = array(
+    '#theme' => 'travel_dates_pane',
+    '#product' => $entity,
+  );
+  $entity->content['itinerary_pane'] = array(
+    '#theme' => 'itinerary_pane',
+    '#product' => $entity,
+  );
+  $entity->content['conditions'] = array(
+    '#theme' => 'terms_and_conditions',
+    '#product' => $entity,
+  );
+  $entity->content['inclusions_pane'] = array(
+    '#theme' => 'inclusions_pane',
+    '#product' => $entity,
+  );
+  $entity->content['supplier_image_pane'] = array(
+    '#theme' => 'supplier_image_pane',
+    '#product' => $entity,
+  );
+  $entity->content['supplier_logo_pane'] = array(
+    '#theme' => 'supplier_logo_pane',
+    '#product' => $entity,
+  );
+  $entity->content['expiry_date_pane'] = array(
+    '#theme' => 'expiry_date_pane',
+    '#product' => $entity,
+  );
+  $entity->content['star_rating_pane'] = array(
+    '#theme' => 'star_rating_pane',
+    '#product' => $entity,
+  );
+  $entity->content['expired_ribbon_pane'] = array(
+    '#theme' => 'expired_ribbon_pane',
+    '#product' => $entity,
+  );
+  $entity->content['wow_factor_pane'] = array(
+    '#theme' => 'wow_factor_pane',
+    '#product' => $entity,
+  );
+  $entity->content['product_type_icon_pane'] = array(
+    '#theme' => 'product_type_icon_pane',
+    '#product' => $entity,
+  );
+  $entity->content['airline_logo_pane'] = array(
+    '#theme' => 'airline_logo_pane',
+    '#product' => $entity,
+  );
+  $entity->content['product_sku_pane'] = array(
+    '#theme' => 'product_sku_pane',
+    '#product' => $entity,
+  );
+}
+
+/**
+ * Implements hook_view_alter().
+ *
+ * Ctools_entity_field_extra_content_type_render() only calls two hooks with no
+ * alters, we want to run after fcl_airline has added its stuff so we choose the
+ * 2nd hook to act on.
+ */
+function fcl_product_components_entity_view($entity, $type, $view_mode, $langcode) {
+  if ($type !== 'fcl_procat_product') {
+    return;
+  }
+
+  // Get Airline code.
+  $airline_code = $entity->airline_name;
+  if (property_exists($entity, 'airline_code')) {
+    $airline_code = $entity->airline_code;
+  }
+
+  if (!empty($entity->content['airline_info'])) {
+    $airline = $entity->content['airline_info']['fcl_airline'][$airline_code];
+    $entity->content['airline_name_full'] = $airline['name'];
+    // Image styles don't like remote URIs by default, so unset.
+    // TODO: look into remote stream wrapper?
+    $entity->content['airline_logo_small'] = $airline['logo_small'];
+    unset($entity->content['airline_logo_small'][0]['#image_style']);
+    $entity->content['airline_logo_large'] = $airline['logo_large'];
+    unset($entity->content['airline_logo_large'][0]['#image_style']);
+    $entity->content['airline_logo_xlarge'] = $airline['logo_450x450'];
+    unset($entity->content['airline_logo_xlarge'][0]['#image_style']);
+  }
+
+  // Declare destination id to make it available in extra fields preprocess.
+  $entity->content['destination_id'] = fcl_procat_product_get_term_name('fcl_product_destination', $entity->destination_id);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * We override entity_property themes of fcl_procat_products to make them
+ * templates instead.
+ */
+function fcl_product_components_preprocess_entity_property(&$vars) {
+  if ($vars['elements']['#entity_type'] !== 'fcl_procat_product') {
+    return;
+  }
+
+  // Hide the label rendered by entity_property, our tpl's can do it.
+  $vars['label_hidden'] = TRUE;
+  $vars['content'] = theme('product_component', array(
+    'product' => $vars['elements']['#entity_wrapped'],
+    'property' => $vars['property_name'],
+    'title' => isset($vars['elements']['#title']) ? $vars['elements']['#title'] : NULL,
+    'title_tag' => isset($vars['elements']['#title_tag']) ? $vars['elements']['#title_tag'] : 'h2',
+  ));
+}
+
+/**
+ * Allow to alter the pane content to render.
+ *
+ * This happens after the keyword substitution. Pass pane title and pane title
+ * tag setting to panes displaying `entity_field`  and `entity_field_extra`
+ * components so that pane title and pane title tag can be displayed inside the
+ * component.
+ *
+ * @param object $content
+ *   The content block to render.
+ * @param object $pane
+ *   The pane object.
+ * @param array $args
+ *   The display arguments.
+ * @param array $contexts
+ *   Array with the used contexts.
+ */
+function fcl_product_components_panels_pane_content_alter($content, $pane, $args, $contexts) {
+  // Only pass override title pane setting to content if it is
+  // fcl_procat_product entity pane.
+  if (isset($contexts['argument_entity_id:fcl_procat_product_1'])
+    && $contexts['argument_entity_id:fcl_procat_product_1']->original_argument->type !== 'fcl_procat_product'
+  ) {
+    return NULL;
+  }
+
+  $conf = &$pane->configuration;
+  $override_title = isset($conf['override_title']) ? $conf['override_title'] : FALSE;
+
+  // All the entity field and extra fields are available as panel pane. Here
+  // we are injecting override title setting inside panel pane content so
+  // we have complete control over display and styling of panel pane title.
+  if (($pane->type === 'entity_field' || $pane->type === 'entity_field_extra')
+      && $override_title
+      && isset($content->content)
+      && is_array($content->content)
+    ) {
+    $content->content['#title'] = ctools_context_keyword_substitute($conf['override_title_text'], array(), $contexts);
+    $content->content['#title_tag'] = $conf['override_title_heading'];
+  }
+}
