@@ -197,6 +197,18 @@ function fcl_product_components_theme($existing, $type, $theme, $path) {
     ),
   );
 
+  $return['gne_reference_pane'] = array(
+    'template' => 'gne-reference-pane',
+    'path' => $components_path . 'gne_reference_pane',
+    'file' => 'gne_reference_pane.inc',
+    'pattern' => 'gne_reference_pane__',
+    'variables' => array(
+      'product' => (object) [],
+      'title' => NULL,
+      'title_tag' => NULL,
+    ),
+  );
+
   return $return;
 }
 
@@ -348,6 +360,12 @@ function fcl_product_components_field_extra_fields() {
       'description' => t('SKU of the product.'),
       'weight' => 5,
     );
+
+    $return[$entity_type][$bundle]['display']['gne_reference_pane'] = array(
+      'label' => t('GNE Reference'),
+      'description' => t('GNE Reference of the product.'),
+      'weight' => 5,
+    );
   }
 
   return $return;
@@ -442,6 +460,10 @@ function fcl_product_components_fcl_procat_product_view($entity, $view_mode, $la
     '#theme' => 'product_sku_pane',
     '#product' => $entity,
   );
+  $entity->content['gne_reference_pane'] = array(
+    '#theme' => 'gne_reference_pane',
+    '#product' => $entity,
+  );
 }
 
 /**
@@ -533,10 +555,10 @@ function fcl_product_components_panels_pane_content_alter($content, $pane, $args
   // we are injecting override title setting inside panel pane content so
   // we have complete control over display and styling of panel pane title.
   if (($pane->type === 'entity_field' || $pane->type === 'entity_field_extra')
-      && $override_title
-      && isset($content->content)
-      && is_array($content->content)
-    ) {
+    && $override_title
+    && isset($content->content)
+    && is_array($content->content)
+  ) {
     $content->content['#title'] = ctools_context_keyword_substitute($conf['override_title_text'], array(), $contexts);
     $content->content['#title_tag'] = $conf['override_title_heading'];
   }
