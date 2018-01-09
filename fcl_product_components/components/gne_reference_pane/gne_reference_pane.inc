@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Airline logo theming functions.
+ * GNE Reference theming functions.
  */
 
 /**
