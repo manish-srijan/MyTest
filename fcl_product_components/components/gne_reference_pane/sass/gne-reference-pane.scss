@@ -6,7 +6,7 @@ $gne-reference-selector: '.gne-reference-pane' !default;
 $gne-reference-pane-gne-reference-display: inline-block !default;
 $gne-reference-pane-gne-wrapper-display: $gne-reference-pane-gne-reference-display !default;
 $gne-reference-pane-gne-wrapper-margin: 0 0 0 15px !default;
-$gne-reference-pane-padding: .875em;
+$gne-reference-pane-padding: 1rem;
 $gne-reference-pane-text-align: left !default;
 $gne-reference-pane-gne-label-font-weight: bold !default;
 $gne-reference-pane-gne-value-font-weight: normal !default;
@@ -16,6 +16,7 @@ $gne-reference-pane-text-color: $color-text-dark-primary !default;
   #{$gne-reference-pane-selector} {
     padding: $gne-reference-pane-padding;
     text-align: $gne-reference-pane-text-align;
+    background-color: whitesmoke;
 
     #{$gne-reference-selector} {
       &__title,
